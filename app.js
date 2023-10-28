@@ -10,17 +10,18 @@ const campsiteRouter = require("./routes/campsiteRouter");
 const promotionRouter = require("./routes/promotionRouter");
 const partnerRouter = require("./routes/partnerRouter");
 
-const mongoose = require("mongoose");
-const url = "mongodb://0.0.0.0:27017/nucampsite";
+const mongoose = require('mongoose');
+
+const url = 'mongodb://0.0.0.0:27017/nucampsite';
 const connect = mongoose.connect(url, {
     useCreateIndex: true,
     useFindAndModify: false,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
 });
 
-connect.then(() => console.log('Connected correctly to server'),
-  err => console.log(err)
+connect.then(() => console.log('Connected correctly to server'), 
+    err => console.log(err)
 );
 
 const app = express();
